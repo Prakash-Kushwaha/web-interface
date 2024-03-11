@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <header>
+        <a href="index"><span>Atma Ram Santan Dharma College</span></a>
+
+    </header>
+    <main>
+        <form action="signup" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>New User? Register Here</legend>
+                <fieldset>
+                    <legend>Name</legend>
+                    <input type="text" name="Name" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Age</legend>
+                    <input type="text" name="Age" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Gender</legend>
+                    <input type="text" name="Gender" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Email</legend>
+                    <input type="email" name="Email" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Password</legend>
+                    <input type="password" name="Passwd" required>
+                </fieldset>
+                <section id="buttons">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </section>
+            </fieldset>
+        </form>
+        <script>
+            if ('{{ message }}') {
+                alert('{{ message }}')
+            }
+        </script>
+    </main>
+</body>
+
+</html>
